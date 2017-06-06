@@ -24,7 +24,6 @@ public class TempFragment extends Fragment {
         // Required empty public constructor
     }
 
-    @BindView(R.id.text)
     TextView textView;
 
     @Override
@@ -32,12 +31,12 @@ public class TempFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_temp, container, false);
-        ButterKnife.bind(getActivity());
+        textView = (TextView) v.findViewById(R.id.text);
 
         Bundle args = getArguments();
         from = args.getString("from");
         Log.e("FROM", from);
-//        textView.setText(from);
+        textView.setText(from);
 
         return v;
     }

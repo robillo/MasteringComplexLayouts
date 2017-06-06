@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -17,7 +18,7 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
-    private String from = "HOME";
+    private String from;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -25,21 +26,31 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    setupViewPager(viewPager, from = getString(R.string.title_home));
+                case R.id.navigation_home:{
+                    from = getString(R.string.title_home);
+                    setupViewPager(viewPager, from);
                     return true;
-                case R.id.navigation_dashboard:
-                    setupViewPager(viewPager, from = getString(R.string.guru));
+                }
+                case R.id.navigation_dashboard:{
+                    from = getString(R.string.guru);
+                    setupViewPager(viewPager, from);
                     return true;
-                case R.id.navigation_notifications:
-                    setupViewPager(viewPager, from = getString(R.string.explore));
+                }
+                case R.id.navigation_notifications:{
+                    from = getString(R.string.explore);
+                    setupViewPager(viewPager, from);
                     return true;
-                case R.id.navigation_your_feeds:
-                    setupViewPager(viewPager, from = getString(R.string.your_feeds));
+                }
+                case R.id.navigation_your_feeds:{
+                    from = getString(R.string.your_feeds);
+                    setupViewPager(viewPager, from);
                     return true;
-                case R.id.navigation_profile:
-                    setupViewPager(viewPager, from = getString(R.string.profile));
+                }
+                case R.id.navigation_profile:{
+                    from = getString(R.string.profile);
+                    setupViewPager(viewPager, from);
                     return true;
+                }
             }
             return false;
         }
@@ -59,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
+        from = getString(R.string.title_home);
         setSupportActionBar(toolbar);
         setupViewPager(viewPager, from);
         tabLayout.setupWithViewPager(viewPager);
@@ -70,8 +82,10 @@ public class MainActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager, String from) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         Fragment fragment = new TempFragment();
+
         Bundle args = new Bundle();
         args.putString("from", from);
+        Log.e("from", from);
         fragment.setArguments(args);
 
         adapter.addFragment(fragment, "Status");
