@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity{
                 case R.id.navigation_home:{
                     from = getString(R.string.title_home);
 //                    setupViewPager(viewPager, from);
+                    header.setText("Daily Suvichar : Home");
                     adapterSlide = new ScreenSlidePager(getSupportFragmentManager(), from);
                     viewPager.setAdapter(adapterSlide);
                     return true;
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity{
                 case R.id.navigation_notifications:{
                     from = getString(R.string.explore);
 //                    setupViewPager(viewPager, from);
+                    header.setText("Daily Suvichar : Explore");
                     adapterSlide = new ScreenSlidePager(getSupportFragmentManager(), from);
                     viewPager.setAdapter(adapterSlide);
                     return true;
@@ -62,6 +64,7 @@ public class MainActivity extends AppCompatActivity{
                 case R.id.navigation_your_feeds:{
                     from = getString(R.string.your_feeds);
 //                    setupViewPager(viewPager, from);
+                    header.setText("Daily Suvichar : Your Feeds");
                     adapterSlide = new ScreenSlidePager(getSupportFragmentManager(), from);
                     viewPager.setAdapter(adapterSlide);
                     return true;
@@ -89,6 +92,8 @@ public class MainActivity extends AppCompatActivity{
     ViewPager viewPager;
     @BindView(R.id.tabs)
     TabLayout tabLayout;
+    @BindView(R.id.header)
+    TextView header;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,6 +105,7 @@ public class MainActivity extends AppCompatActivity{
 
 //        adapter = new ViewPagerAdapter(getSupportFragmentManager());
         from = getString(R.string.title_home);
+        header.setText("Daily Suvichar: Home");
         setSupportActionBar(toolbar);
 //        setupViewPager(viewPager, from);
 //        viewPager.setOnPageChangeListener(this);
