@@ -9,7 +9,10 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import butterknife.BindView;
@@ -20,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView mTextMessage;
     private String from;
     private ViewPagerAdapter adapter;
+    private nViewPagerAdapter pagerAdapter = null;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -71,11 +75,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
+//        pagerAdapter = new nViewPagerAdapter();
+
         adapter = new ViewPagerAdapter(getSupportFragmentManager());
         from = getString(R.string.your_feeds);
         setSupportActionBar(toolbar);
         setupViewPager(viewPager, from);
         tabLayout.setupWithViewPager(viewPager);
+
+//        // Create an initial view to display; must be a subclass of FrameLayout.
+//        LayoutInflater inflater = LayoutInflater.from(getApplicationContext());
+//        FrameLayout v0 = (FrameLayout) inflater.inflate (R.layout.fragment_temp, null);
+//        pagerAdapter.addView(v0, 0);
+//        pager.setAdapter (pagerAdapter);
+//        pagerAdapter.notifyDataSetChanged();
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -107,4 +120,5 @@ public class MainActivity extends AppCompatActivity {
 
         viewPager.setAdapter(adapter);
     }
+
 }
