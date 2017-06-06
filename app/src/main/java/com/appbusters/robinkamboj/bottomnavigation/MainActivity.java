@@ -2,6 +2,7 @@ package com.appbusters.robinkamboj.bottomnavigation;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TabLayout;
@@ -42,7 +43,13 @@ public class MainActivity extends AppCompatActivity{
                 }
                 case R.id.navigation_dashboard:{
                     from = getString(R.string.guru);
-                    startActivity(new Intent(MainActivity.this, GuruActivity.class));
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            startActivity(new Intent(MainActivity.this, GuruActivity.class));
+                        }
+                    }, 200);
                     return true;
                 }
                 case R.id.navigation_notifications:{
@@ -61,9 +68,13 @@ public class MainActivity extends AppCompatActivity{
                 }
                 case R.id.navigation_profile:{
                     from = getString(R.string.profile);
-//                    setupViewPager(viewPager, from);
-                    adapterSlide = new ScreenSlidePager(getSupportFragmentManager(), from);
-                    viewPager.setAdapter(adapterSlide);
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+                        }
+                    }, 200);
                     return true;
                 }
             }

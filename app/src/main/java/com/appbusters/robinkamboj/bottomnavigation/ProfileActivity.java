@@ -7,15 +7,16 @@ import android.support.v7.widget.Toolbar;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class GuruActivity extends AppCompatActivity {
+public class ProfileActivity extends AppCompatActivity {
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_guru);
+        setContentView(R.layout.activity_profile);
         ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);
