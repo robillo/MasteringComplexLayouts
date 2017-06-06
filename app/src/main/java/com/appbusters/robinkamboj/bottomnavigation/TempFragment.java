@@ -28,6 +28,16 @@ public class TempFragment extends Fragment {
         return new TempFragment();
     }
 
+    public void setTextViewHome(){
+        textView.setText("HOME");
+    }
+    public void setTextViewGuru(){
+        textView.setText("GURU");
+    }
+    public void setTextViewExplore(){
+        textView.setText("EXPLORE");
+    }
+
     TextView textView;
 
     @Override
