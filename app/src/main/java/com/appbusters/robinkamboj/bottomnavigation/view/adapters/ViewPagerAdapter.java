@@ -1,4 +1,4 @@
-package com.appbusters.robinkamboj.bottomnavigation;
+package com.appbusters.robinkamboj.bottomnavigation.view.adapters;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

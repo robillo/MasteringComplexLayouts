@@ -1,8 +1,10 @@
-package com.appbusters.robinkamboj.bottomnavigation;
+package com.appbusters.robinkamboj.bottomnavigation.view.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+
+import com.appbusters.robinkamboj.bottomnavigation.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

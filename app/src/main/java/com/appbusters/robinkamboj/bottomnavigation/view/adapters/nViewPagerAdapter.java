@@ -1,4 +1,4 @@
-package com.appbusters.robinkamboj.bottomnavigation;
+package com.appbusters.robinkamboj.bottomnavigation.view.adapters;
 
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;

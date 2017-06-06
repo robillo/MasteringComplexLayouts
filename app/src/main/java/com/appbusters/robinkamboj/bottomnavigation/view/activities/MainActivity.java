@@ -1,4 +1,4 @@
-package com.appbusters.robinkamboj.bottomnavigation;
+package com.appbusters.robinkamboj.bottomnavigation.view.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,16 +6,16 @@ import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.TextView;
+
+import com.appbusters.robinkamboj.bottomnavigation.R;
+import com.appbusters.robinkamboj.bottomnavigation.view.adapters.ScreenSlidePager;
+import com.appbusters.robinkamboj.bottomnavigation.view.adapters.ViewPagerAdapter;
+import com.appbusters.robinkamboj.bottomnavigation.view.adapters.nViewPagerAdapter;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

@@ -1,9 +1,11 @@
-package com.appbusters.robinkamboj.bottomnavigation;
+package com.appbusters.robinkamboj.bottomnavigation.view.adapters;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.view.ViewGroup;
+
+import com.appbusters.robinkamboj.bottomnavigation.view.fragments.TempFragment;
 
 import java.util.HashMap;
 import java.util.Map;

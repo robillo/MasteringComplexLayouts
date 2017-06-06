@@ -1,10 +1,12 @@
-package com.appbusters.robinkamboj.bottomnavigation;
+package com.appbusters.robinkamboj.bottomnavigation.view.adapters;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.view.ViewGroup;
+
+import com.appbusters.robinkamboj.bottomnavigation.view.fragments.TempFragment;
 
 public class ScreenSlidePager extends FragmentStatePagerAdapter {
 

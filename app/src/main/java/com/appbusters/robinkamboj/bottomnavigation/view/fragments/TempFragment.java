@@ -1,4 +1,4 @@
-package com.appbusters.robinkamboj.bottomnavigation;
+package com.appbusters.robinkamboj.bottomnavigation.view.fragments;
 
 
 import android.os.Bundle;
@@ -9,8 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
+import com.appbusters.robinkamboj.bottomnavigation.R;
 
 
 /**
