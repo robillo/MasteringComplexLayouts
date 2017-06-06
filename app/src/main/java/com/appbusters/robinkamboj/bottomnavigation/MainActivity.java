@@ -1,5 +1,6 @@
 package com.appbusters.robinkamboj.bottomnavigation;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -41,9 +42,7 @@ public class MainActivity extends AppCompatActivity{
                 }
                 case R.id.navigation_dashboard:{
                     from = getString(R.string.guru);
-//                    setupViewPager(viewPager, from);
-                    adapterSlide = new ScreenSlidePager(getSupportFragmentManager(), from);
-                    viewPager.setAdapter(adapterSlide);
+                    startActivity(new Intent(MainActivity.this, GuruActivity.class));
                     return true;
                 }
                 case R.id.navigation_notifications:{
