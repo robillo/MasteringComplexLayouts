@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
     private String from;
+    private ViewPagerAdapter adapter;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -70,7 +71,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        from = getString(R.string.title_home);
+        adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        from = getString(R.string.your_feeds);
         setSupportActionBar(toolbar);
         setupViewPager(viewPager, from);
         tabLayout.setupWithViewPager(viewPager);
@@ -80,12 +82,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupViewPager(ViewPager viewPager, String from) {
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        Fragment fragment = new TempFragment();
 
+        if(adapter.getCount()<1){
+            viewPager.removeAllViews();
+        }
+
+        Fragment fragment = new TempFragment();
         Bundle args = new Bundle();
         args.putString("from", from);
-        Log.e("from", from);
         fragment.setArguments(args);
 
         adapter.addFragment(fragment, "Status");
@@ -99,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
         fragment.setArguments(args);
 
         adapter.addFragment(fragment, "Videos");
+        adapter.notifyDataSetChanged();
 
         viewPager.setAdapter(adapter);
     }

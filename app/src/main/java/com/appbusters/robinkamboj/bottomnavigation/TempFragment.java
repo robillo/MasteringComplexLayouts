@@ -24,6 +24,10 @@ public class TempFragment extends Fragment {
         // Required empty public constructor
     }
 
+    public static Fragment newInstance(){
+        return new TempFragment();
+    }
+
     TextView textView;
 
     @Override
