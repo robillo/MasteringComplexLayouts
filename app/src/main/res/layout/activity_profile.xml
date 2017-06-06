@@ -25,7 +25,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/colorPrimary"
                 android:gravity="center"
-                android:text="Guru List"
+                android:text="Your Profile"
                 android:textColor="#FFF"
                 android:fontFamily="sans-serif-smallcaps"
                 android:textSize="20sp"
